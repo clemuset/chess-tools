@@ -43,7 +43,7 @@ use Cmuset\PgnParser\Model\Game;
 $pgn = file_get_contents('path/to/game.pgn');
 $game = Game::fromPGN($pgn);
 
-$game->getResult(); // e.g. ResultEnum::WHITE_WIN
+$game->getResult(); // e.g. ResultEnum::WHITE_WINS
 $game->getMainLine(); // Variation instance
 
 foreach ($game->getMainLine() as $key => $node) {
@@ -82,7 +82,7 @@ foreach ($game->getMainLine() as $key => $node) {
 ### Parsing a PGN into a `Game`
 
 ```php
-use Cmuset\PgnParser\Parser\PGNParser;
+use Cmuset\PgnParser\Tool\Parser\PGNParser;
 
 $parser = PGNParser::create();
 $game = $parser->parse($rawPgnString);
@@ -96,20 +96,14 @@ $game = Game::fromPGN($rawPgnString);
 ### Building a Game Programmatically
 
 ```php
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\ResultEnum;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Parser\PGNParser;
+use Cmuset\PgnParser\Enum\ColorEnum;use Cmuset\PgnParser\Enum\ResultEnum;use Cmuset\PgnParser\Model\Game;use Cmuset\PgnParser\Model\Move;use Cmuset\PgnParser\Model\MoveNode;use Cmuset\PgnParser\Model\Position;use Cmuset\PgnParser\Tool\Parser\PGNParser;
 
 $game = new Game();
 $game->setInitialPosition(Position::fromFEN(PGNParser::INITIAL_FEN));
 $game->setTag('Event', 'Casual Game');
 $game->setTag('Site', 'Local');
 $game->setTag('Result', '1-0');
-$game->setResult(ResultEnum::WHITE_WIN);
+$game->setResult(ResultEnum::WHITE_WINS);
 
 $node1 = new MoveNode();
 $node1->setMove(Move::fromSAN('e4', ColorEnum::WHITE));
@@ -197,7 +191,7 @@ echo $position->getFEN(); // e.g. "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR
 Apply a SAN move to a `Position`, with full rules handling (castling rights, en passant, promotion, counters):
 
 ```php
-use Cmuset\PgnParser\Enum\ColorEnum;use Cmuset\PgnParser\Model\Move;use Cmuset\PgnParser\Model\Position;use Cmuset\PgnParser\MoveApplier\Exception\MoveApplyingException;use Cmuset\PgnParser\Parser\PGNParser;
+use Cmuset\PgnParser\Enum\ColorEnum;use Cmuset\PgnParser\Model\Move;use Cmuset\PgnParser\Model\Position;use Cmuset\PgnParser\Tool\MoveApplier\Exception\MoveApplyingException;use Cmuset\PgnParser\Tool\Parser\PGNParser;
 
 $pos = Position::fromFEN(PGNParser::INITIAL_FEN);
 try {
@@ -218,9 +212,7 @@ $legalMoves = $pos->getLegalMoves(); // Move[]
 Validate a single position or a full game (main line + variations):
 
 ```php
-use Cmuset\PgnParser\Validator\PositionValidator;
-use Cmuset\PgnParser\Validator\GameValidator;
-use Cmuset\PgnParser\Model\Game;
+use Cmuset\PgnParser\Model\Game;use Cmuset\PgnParser\Tool\Validator\GameValidator;use Cmuset\PgnParser\Tool\Validator\PositionValidator;
 
 $posViolations = (new PositionValidator())->validate($pos); // PositionViolationEnum[]
 

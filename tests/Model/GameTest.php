@@ -40,7 +40,7 @@ class GameTest extends TestCase
     public function testResultAssignment(): void
     {
         $game = new Game();
-        $game->setResult(ResultEnum::WHITE_WIN);
-        self::assertSame(ResultEnum::WHITE_WIN, $game->getResult());
+        $game->setResult(ResultEnum::WHITE_WINS);
+        self::assertSame(ResultEnum::WHITE_WINS, $game->getResult());
     }
 }

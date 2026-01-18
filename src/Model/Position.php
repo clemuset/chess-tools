@@ -6,15 +6,15 @@ use Cmuset\PgnParser\Enum\CastlingEnum;
 use Cmuset\PgnParser\Enum\ColorEnum;
 use Cmuset\PgnParser\Enum\CoordinatesEnum;
 use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Exporter\PositionExporter;
-use Cmuset\PgnParser\MoveApplier\MoveApplier;
-use Cmuset\PgnParser\MoveApplier\PieceMoveApplier\BishopMoveApplier;
-use Cmuset\PgnParser\MoveApplier\PieceMoveApplier\KingMoveApplier;
-use Cmuset\PgnParser\MoveApplier\PieceMoveApplier\KnightMoveApplier;
-use Cmuset\PgnParser\MoveApplier\PieceMoveApplier\PawnMoveApplier;
-use Cmuset\PgnParser\MoveApplier\PieceMoveApplier\QueenMoveApplier;
-use Cmuset\PgnParser\MoveApplier\PieceMoveApplier\RookMoveApplier;
-use Cmuset\PgnParser\Parser\FENParser;
+use Cmuset\PgnParser\Tool\Exporter\PositionExporter;
+use Cmuset\PgnParser\Tool\MoveApplier\MoveApplier;
+use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\BishopMoveApplier;
+use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\KingMoveApplier;
+use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\KnightMoveApplier;
+use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\PawnMoveApplier;
+use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\QueenMoveApplier;
+use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\RookMoveApplier;
+use Cmuset\PgnParser\Tool\Parser\FENParser;
 
 class Position
 {
@@ -156,6 +156,15 @@ class Position
         $move = is_string($move) ? Move::fromSAN($move, $this->sideToMove) : $move;
 
         MoveApplier::create()->apply($this, $move);
+    }
+
+    public function applyVariation(string|Variation $variation): void
+    {
+        $variation = is_string($variation) ? Variation::fromPGN($variation) : $variation;
+
+        foreach ($variation as $node) {
+            $this->applyMove($node->getMove());
+        }
     }
 
     /**

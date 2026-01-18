@@ -9,7 +9,6 @@ class MoveNode
 {
     private ?Move $move;
     private ?int $moveNumber;
-    private ?Move $resolvedMove = null;
     private ?string $afterMoveComment = null;
     private ?string $beforeMoveComment = null;
 
@@ -43,16 +42,6 @@ class MoveNode
     public function setMoveNumber(?int $moveNumber): void
     {
         $this->moveNumber = $moveNumber;
-    }
-
-    public function getResolvedMove(): ?Move
-    {
-        return $this->resolvedMove;
-    }
-
-    public function setResolvedMove(?Move $move): void
-    {
-        $this->resolvedMove = $move;
     }
 
     public function getColor(): ?ColorEnum

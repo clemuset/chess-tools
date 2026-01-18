@@ -3,9 +3,10 @@
 namespace Cmuset\PgnParser\Model;
 
 use Cmuset\PgnParser\Enum\ResultEnum;
-use Cmuset\PgnParser\Exporter\GameExporter;
-use Cmuset\PgnParser\Parser\PGNParser;
-use Cmuset\PgnParser\Splitter\VariationSplitter;
+use Cmuset\PgnParser\Tool\Exporter\GameExporter;
+use Cmuset\PgnParser\Tool\Parser\PGNParser;
+use Cmuset\PgnParser\Tool\Resolver\GameResolver;
+use Cmuset\PgnParser\Tool\Splitter\VariationSplitter;
 
 class Game
 {
@@ -35,6 +36,14 @@ class Game
         $clonedGame = clone $this;
         $clonedGame->clearAllComments();
         $clonedGame->tags = [];
+
+        return GameExporter::create()->export($clonedGame);
+    }
+
+    public function getVerbosePgn(): string
+    {
+        $clonedGame = clone $this;
+        GameResolver::create()->resolve($clonedGame);
 
         return GameExporter::create()->export($clonedGame);
     }

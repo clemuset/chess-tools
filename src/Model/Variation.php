@@ -3,9 +3,9 @@
 namespace Cmuset\PgnParser\Model;
 
 use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Exporter\GameExporter;
-use Cmuset\PgnParser\Parser\PGNParser;
-use Cmuset\PgnParser\Splitter\VariationSplitter;
+use Cmuset\PgnParser\Tool\Exporter\GameExporter;
+use Cmuset\PgnParser\Tool\Parser\PGNParser;
+use Cmuset\PgnParser\Tool\Splitter\VariationSplitter;
 
 /**
  * @implements \IteratorAggregate<string, MoveNode>

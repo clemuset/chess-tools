@@ -7,7 +7,7 @@ use Cmuset\PgnParser\Enum\CoordinatesEnum;
 use Cmuset\PgnParser\Enum\PieceEnum;
 use Cmuset\PgnParser\Model\Move;
 use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Parser\PGNParser;
+use Cmuset\PgnParser\Tool\Parser\PGNParser;
 use PHPUnit\Framework\TestCase;
 
 class PositionTest extends TestCase

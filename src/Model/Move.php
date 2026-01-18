@@ -6,8 +6,8 @@ use Cmuset\PgnParser\Enum\CastlingEnum;
 use Cmuset\PgnParser\Enum\ColorEnum;
 use Cmuset\PgnParser\Enum\CoordinatesEnum;
 use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Exporter\MoveExporter;
-use Cmuset\PgnParser\Parser\SANParser;
+use Cmuset\PgnParser\Tool\Exporter\MoveExporter;
+use Cmuset\PgnParser\Tool\Parser\SANParser;
 
 class Move
 {

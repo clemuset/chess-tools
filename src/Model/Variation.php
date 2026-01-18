@@ -4,6 +4,7 @@ namespace Cmuset\PgnParser\Model;
 
 use Cmuset\PgnParser\Enum\ColorEnum;
 use Cmuset\PgnParser\Tool\Exporter\GameExporter;
+use Cmuset\PgnParser\Tool\Merger\VariationMerger;
 use Cmuset\PgnParser\Tool\Parser\PGNParser;
 use Cmuset\PgnParser\Tool\Splitter\VariationSplitter;
 
@@ -50,6 +51,11 @@ class Variation implements \IteratorAggregate, \ArrayAccess, \Countable
     public function split(): array
     {
         return VariationSplitter::create()->split($this);
+    }
+
+    public function merge(Variation ...$variations): void
+    {
+        VariationMerger::create()->merge($this, ...$variations);
     }
 
     public function getLastNode(): ?MoveNode

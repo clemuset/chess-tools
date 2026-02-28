@@ -164,7 +164,7 @@ $game->merge($variationA, $variationB);
 
 ---
 
-## Model Layer
+## Model Overview
 
 ```mermaid
 classDiagram
@@ -247,16 +247,13 @@ classDiagram
 
 All domain concepts are PHP string-backed enums.
 
-| Enum                                           | Values                                                                                              | Docs                                               |
-|------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------|
-| [`ColorEnum`](docs/enums/color.md)             | `WHITE` `'w'` · `BLACK` `'b'`                                                                       | [→](docs/enums/color.md)                           |
-| [`PieceEnum`](docs/enums/piece.md)             | `WHITE_KING` `'K'` … `BLACK_PAWN` `'p'` (12 cases)                                                  | [→](docs/enums/piece.md)                           |
-| [`CoordinatesEnum`](docs/enums/coordinates.md) | `A1` `'a1'` … `H8` `'h8'` (64 cases)                                                                | [→](docs/enums/coordinates.md)                     |
-| [`CastlingEnum`](docs/enums/castling.md)       | `WHITE_KINGSIDE` `'K'` · `WHITE_QUEENSIDE` `'Q'` · `BLACK_KINGSIDE` `'k'` · `BLACK_QUEENSIDE` `'q'` | [→](docs/enums/castling.md)                        |
-| [`ResultEnum`](docs/enums/result.md)           | `WHITE_WINS` `'1-0'` · `BLACK_WINS` `'0-1'` · `DRAW` `'1/2-1/2'` · `ONGOING` `'*'`                  | [→](docs/enums/result.md)                          |
-| `CommentAnchorEnum`                            | `PRE` · `POST`                                                                                      | —                                                  |
-| `MoveViolationEnum`                            | `PIECE_NOT_FOUND` · `WRONG_COLOR_TO_MOVE` · `CASTLING_IS_NOT_ALLOWED` …                             | [→](docs/tools/validator.md#moveviolationenum)     |
-| `PositionViolationEnum`                        | `NO_WHITE_KING` · `KING_IN_CHECK` · `PAWN_ON_INVALID_RANK` …                                        | [→](docs/tools/validator.md#positionviolationenum) |
+| Enum                                                             | Values                                                                                              | Docs                                               |
+|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| [`ColorEnum`](docs/enums/color.md)                               | `WHITE` `'w'` · `BLACK` `'b'`                                                                       | [→](docs/enums/color.md)                           |
+| [`PieceEnum`](docs/enums/piece.md)                               | `WHITE_KING` `'K'` … `BLACK_PAWN` `'p'` (12 cases)                                                  | [→](docs/enums/piece.md)                           |
+| [`CoordinatesEnum`](docs/enums/coordinates.md)                   | `A1` `'a1'` … `H8` `'h8'` (64 cases)                                                                | [→](docs/enums/coordinates.md)                     |
+| [`CastlingEnum`](docs/enums/castling.md)                         | `WHITE_KINGSIDE` `'K'` · `WHITE_QUEENSIDE` `'Q'` · `BLACK_KINGSIDE` `'k'` · `BLACK_QUEENSIDE` `'q'` | [→](docs/enums/castling.md)                        |
+| [`ResultEnum`](docs/enums/result.md)                             | `WHITE_WINS` `'1-0'` · `BLACK_WINS` `'0-1'` · `DRAW` `'1/2-1/2'` · `ONGOING` `'*'`                  | [→](docs/enums/result.md)                          |
 
 ---
 

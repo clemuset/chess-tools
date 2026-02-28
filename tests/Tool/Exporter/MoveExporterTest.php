@@ -1,12 +1,12 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Exporter;
+namespace Cmuset\ChessTools\Tests\Tool\Exporter;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Tool\Exporter\MoveExporter;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Tool\Exporter\MoveExporter;
 use PHPUnit\Framework\TestCase;
 
 class MoveExporterTest extends TestCase

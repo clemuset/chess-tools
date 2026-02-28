@@ -1,20 +1,20 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Validator;
+namespace Cmuset\ChessTools\Tests\Tool\Validator;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Model\Variation;
-use Cmuset\PgnParser\Tool\Parser\PGNParser;
-use Cmuset\PgnParser\Tool\Validator\Enum\MoveViolationEnum;
-use Cmuset\PgnParser\Tool\Validator\Enum\PositionViolationEnum;
-use Cmuset\PgnParser\Tool\Validator\GameValidator;
-use Cmuset\PgnParser\Tool\Validator\Model\GameViolation;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\MoveNode;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Model\Variation;
+use Cmuset\ChessTools\Tool\Parser\PGNParser;
+use Cmuset\ChessTools\Tool\Validator\Enum\MoveViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\Enum\PositionViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\GameValidator;
+use Cmuset\ChessTools\Tool\Validator\Model\GameViolation;
 use PHPUnit\Framework\TestCase;
 
 class GameValidatorTest extends TestCase

@@ -1,10 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Parser;
+namespace Cmuset\ChessTools\Tool\Parser;
 
-use Cmuset\PgnParser\Model\Game;
+use Cmuset\ChessTools\Model\Game;
 
 interface PGNParserInterface
 {
-    public function parse(string $pgn): Game;
+    /**
+     * @return Game|Game[]
+     */
+    public function parse(string $pgn): Game|array;
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\MoveApplier;
+namespace Cmuset\ChessTools\Tool\MoveApplier;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Model\Position;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Model\Position;
 
 class MoveHelper
 {
@@ -130,26 +130,23 @@ class MoveHelper
     {
         $attackerColor = $castling->color()->opposite();
 
-        switch ($castling) {
-            case CastlingEnum::WHITE_KINGSIDE:
-                return $position->hasAttacker(CoordinatesEnum::E1, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::F1, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::G1, $attackerColor);
-            case CastlingEnum::WHITE_QUEENSIDE:
-                return $position->hasAttacker(CoordinatesEnum::E1, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::D1, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::C1, $attackerColor);
-            case CastlingEnum::BLACK_KINGSIDE:
-                return $position->hasAttacker(CoordinatesEnum::E8, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::F8, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::G8, $attackerColor);
-            case CastlingEnum::BLACK_QUEENSIDE:
-                return $position->hasAttacker(CoordinatesEnum::E8, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::D8, $attackerColor)
-                    || $position->hasAttacker(CoordinatesEnum::C8, $attackerColor);
-            default:
-                throw new \RuntimeException('Invalid castling enum');
-        }
+        return match ($castling) {
+            CastlingEnum::WHITE_KINGSIDE => $position->hasAttacker(CoordinatesEnum::E1, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::F1, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::G1, $attackerColor),
+
+            CastlingEnum::WHITE_QUEENSIDE => $position->hasAttacker(CoordinatesEnum::E1, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::D1, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::C1, $attackerColor),
+
+            CastlingEnum::BLACK_KINGSIDE => $position->hasAttacker(CoordinatesEnum::E8, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::F8, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::G8, $attackerColor),
+
+            CastlingEnum::BLACK_QUEENSIDE => $position->hasAttacker(CoordinatesEnum::E8, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::D8, $attackerColor)
+                || $position->hasAttacker(CoordinatesEnum::C8, $attackerColor)
+        };
     }
 
     private static function sign(int $value): int

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Validator\Enum;
+namespace Cmuset\ChessTools\Tool\Validator\Enum;
 
 enum MoveViolationEnum: string
 {

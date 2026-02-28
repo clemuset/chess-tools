@@ -1,10 +1,10 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier;
+namespace Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier;
 
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\MoveApplier\MoveHelper;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\MoveApplier\MoveHelper;
 
 class QueenMoveApplier extends PieceMoveApplier
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Validator;
+namespace Cmuset\ChessTools\Tests\Tool\Validator;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\Parser\PGNParser;
-use Cmuset\PgnParser\Tool\Validator\Enum\PositionViolationEnum;
-use Cmuset\PgnParser\Tool\Validator\PositionValidator;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\Parser\PGNParser;
+use Cmuset\ChessTools\Tool\Validator\Enum\PositionViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\PositionValidator;
 use PHPUnit\Framework\TestCase;
 
 class PositionValidatorTest extends TestCase

@@ -1,12 +1,12 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Model;
+namespace Cmuset\ChessTools\Tests\Model;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Variation;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\MoveNode;
+use Cmuset\ChessTools\Model\Variation;
 use PHPUnit\Framework\TestCase;
 
 class VariationTest extends TestCase

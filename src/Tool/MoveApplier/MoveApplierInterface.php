@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\MoveApplier;
+namespace Cmuset\ChessTools\Tool\MoveApplier;
 
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\Position;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\Position;
 
 interface MoveApplierInterface
 {

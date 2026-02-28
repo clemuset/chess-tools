@@ -1,16 +1,16 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\MoveApplier;
+namespace Cmuset\ChessTools\Tool\MoveApplier;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\MoveApplier\Exception\MoveApplyingException;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\PieceMoveApplier;
-use Cmuset\PgnParser\Tool\Validator\Enum\MoveViolationEnum;
-use Cmuset\PgnParser\Tool\Validator\PositionValidator;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\MoveApplier\Exception\MoveApplyingException;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\PieceMoveApplier;
+use Cmuset\ChessTools\Tool\Validator\Enum\MoveViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\PositionValidator;
 
 class MoveApplier implements MoveApplierInterface
 {

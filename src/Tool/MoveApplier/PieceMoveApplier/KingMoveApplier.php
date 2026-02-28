@@ -1,15 +1,15 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier;
+namespace Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\MoveApplier\Exception\MoveApplyingException;
-use Cmuset\PgnParser\Tool\MoveApplier\MoveHelper;
-use Cmuset\PgnParser\Tool\Validator\Enum\MoveViolationEnum;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\MoveApplier\Exception\MoveApplyingException;
+use Cmuset\ChessTools\Tool\MoveApplier\MoveHelper;
+use Cmuset\ChessTools\Tool\Validator\Enum\MoveViolationEnum;
 
 class KingMoveApplier extends PieceMoveApplier
 {

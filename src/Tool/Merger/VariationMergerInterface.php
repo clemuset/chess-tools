@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Merger;
+namespace Cmuset\ChessTools\Tool\Merger;
 
-use Cmuset\PgnParser\Model\Variation;
+use Cmuset\ChessTools\Model\Variation;
 
 interface VariationMergerInterface
 {

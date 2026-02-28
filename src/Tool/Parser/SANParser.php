@@ -1,13 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Parser;
+namespace Cmuset\ChessTools\Tool\Parser;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Tool\Parser\Exception\SANParsingException;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Tool\Parser\Exception\SANParsingException;
 
 class SANParser implements SANParserInterface
 {

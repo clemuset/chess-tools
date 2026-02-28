@@ -1,13 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Model;
+namespace Cmuset\ChessTools\Tests\Model;
 
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Enum\ResultEnum;
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Position;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Enum\ResultEnum;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\MoveNode;
+use Cmuset\ChessTools\Model\Position;
 use PHPUnit\Framework\TestCase;
 
 class GameTest extends TestCase

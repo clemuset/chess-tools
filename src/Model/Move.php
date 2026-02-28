@@ -1,13 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Model;
+namespace Cmuset\ChessTools\Model;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Tool\Exporter\MoveExporter;
-use Cmuset\PgnParser\Tool\Parser\SANParser;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Tool\Exporter\MoveExporter;
+use Cmuset\ChessTools\Tool\Parser\SANParser;
 
 class Move
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Parser\Exception;
+namespace Cmuset\ChessTools\Tool\Parser\Exception;
 
 class FENParsingException extends ParsingException
 {

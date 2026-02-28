@@ -1,13 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Splitter;
+namespace Cmuset\ChessTools\Tests\Tool\Splitter;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Variation;
-use Cmuset\PgnParser\Tool\Splitter\VariationSplitter;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\MoveNode;
+use Cmuset\ChessTools\Model\Variation;
+use Cmuset\ChessTools\Tool\Splitter\VariationSplitter;
 use PHPUnit\Framework\TestCase;
 
 class VariationSplitterTest extends TestCase

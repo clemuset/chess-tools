@@ -1,16 +1,16 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\MoveApplier;
+namespace Cmuset\ChessTools\Tests\Tool\MoveApplier;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\MoveApplier\Exception\MoveApplyingException;
-use Cmuset\PgnParser\Tool\MoveApplier\MoveApplier;
-use Cmuset\PgnParser\Tool\Parser\PGNParser;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\MoveApplier\Exception\MoveApplyingException;
+use Cmuset\ChessTools\Tool\MoveApplier\MoveApplier;
+use Cmuset\ChessTools\Tool\Parser\PGNParser;
 use PHPUnit\Framework\TestCase;
 
 class MoveApplierTest extends TestCase

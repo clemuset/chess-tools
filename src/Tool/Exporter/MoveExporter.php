@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Exporter;
+namespace Cmuset\ChessTools\Tool\Exporter;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Model\Move;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Model\Move;
 
 class MoveExporter implements MoveExporterInterface
 {

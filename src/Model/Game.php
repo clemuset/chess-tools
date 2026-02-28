@@ -1,13 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Model;
+namespace Cmuset\ChessTools\Model;
 
-use Cmuset\PgnParser\Enum\ResultEnum;
-use Cmuset\PgnParser\Tool\Exporter\GameExporter;
-use Cmuset\PgnParser\Tool\Merger\VariationMerger;
-use Cmuset\PgnParser\Tool\Parser\PGNParser;
-use Cmuset\PgnParser\Tool\Resolver\GameResolver;
-use Cmuset\PgnParser\Tool\Splitter\VariationSplitter;
+use Cmuset\ChessTools\Enum\ResultEnum;
+use Cmuset\ChessTools\Tool\Exporter\GameExporter;
+use Cmuset\ChessTools\Tool\Merger\VariationMerger;
+use Cmuset\ChessTools\Tool\Parser\PGNParser;
+use Cmuset\ChessTools\Tool\Resolver\GameResolver;
+use Cmuset\ChessTools\Tool\Splitter\VariationSplitter;
 
 class Game
 {
@@ -24,7 +24,9 @@ class Game
 
     public static function fromPGN(string $pgn): self
     {
-        return PGNParser::create()->parse($pgn);
+        $result = PGNParser::create()->parse($pgn);
+
+        return is_array($result) ? $result[0] : $result;
     }
 
     public function getPGN(): string
@@ -67,8 +69,12 @@ class Game
         return $this->initialPosition;
     }
 
-    public function setInitialPosition(Position $initialPosition): void
+    public function setInitialPosition(string|Position $initialPosition): void
     {
+        if (is_string($initialPosition)) {
+            $initialPosition = Position::fromFEN($initialPosition);
+        }
+
         $this->initialPosition = $initialPosition;
     }
 
@@ -82,7 +88,17 @@ class Game
         $this->mainLine = $mainLine;
     }
 
-    public function getLastMoveNode(): ?MoveNode
+    public function getNode(string $key): ?MoveNode
+    {
+        return $this->mainLine[$key] ?? null;
+    }
+
+    public function getMove(string $key): ?Move
+    {
+        return $this->getNode($key)?->getMove();
+    }
+
+    public function getLastNode(): ?MoveNode
     {
         return $this->mainLine->getLastNode();
     }

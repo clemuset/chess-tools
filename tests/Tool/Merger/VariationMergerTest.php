@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Merger;
+namespace Cmuset\ChessTools\Tests\Tool\Merger;
 
-use Cmuset\PgnParser\Model\Variation;
-use Cmuset\PgnParser\Tool\Merger\VariationMerger;
+use Cmuset\ChessTools\Model\Variation;
+use Cmuset\ChessTools\Tool\Merger\VariationMerger;
 use PHPUnit\Framework\TestCase;
 
 class VariationMergerTest extends TestCase

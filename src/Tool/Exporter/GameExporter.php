@@ -1,11 +1,11 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Exporter;
+namespace Cmuset\ChessTools\Tool\Exporter;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Variation;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\MoveNode;
+use Cmuset\ChessTools\Model\Variation;
 
 class GameExporter implements GameExporterInterface
 {

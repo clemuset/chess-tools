@@ -1,10 +1,10 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Resolver;
+namespace Cmuset\ChessTools\Tests\Tool\Resolver;
 
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\Resolver\MoveResolver;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\Resolver\MoveResolver;
 use PHPUnit\Framework\TestCase;
 
 class MoveResolverTest extends TestCase

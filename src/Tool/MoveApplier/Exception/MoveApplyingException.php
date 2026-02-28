@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\MoveApplier\Exception;
+namespace Cmuset\ChessTools\Tool\MoveApplier\Exception;
 
-use Cmuset\PgnParser\Tool\Validator\Enum\MoveViolationEnum;
-use Cmuset\PgnParser\Tool\Validator\Enum\PositionViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\Enum\MoveViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\Enum\PositionViolationEnum;
 
 class MoveApplyingException extends \Exception
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuset\PgnParser\Enum;
+namespace Cmuset\ChessTools\Enum;
 
 enum CommentAnchorEnum: string
 {

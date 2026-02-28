@@ -1,14 +1,14 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Exporter;
+namespace Cmuset\ChessTools\Tests\Tool\Exporter;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\Exporter\PositionExporter;
-use Cmuset\PgnParser\Tool\Parser\FENParser;
-use Cmuset\PgnParser\Tool\Parser\PGNParser;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\Exporter\PositionExporter;
+use Cmuset\ChessTools\Tool\Parser\FENParser;
+use Cmuset\ChessTools\Tool\Parser\PGNParser;
 use PHPUnit\Framework\TestCase;
 
 class PositionExporterTest extends TestCase

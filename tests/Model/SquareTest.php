@@ -1,10 +1,10 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Model;
+namespace Cmuset\ChessTools\Tests\Model;
 
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Square;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Square;
 use PHPUnit\Framework\TestCase;
 
 class SquareTest extends TestCase

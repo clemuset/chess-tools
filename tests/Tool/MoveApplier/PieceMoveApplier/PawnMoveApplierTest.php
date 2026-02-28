@@ -1,12 +1,12 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\MoveApplier\PieceMoveApplier;
+namespace Cmuset\ChessTools\Tests\Tool\MoveApplier\PieceMoveApplier;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\PawnMoveApplier;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\PawnMoveApplier;
 use PHPUnit\Framework\TestCase;
 
 class PawnMoveApplierTest extends TestCase

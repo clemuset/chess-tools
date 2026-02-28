@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Exporter;
+namespace Cmuset\ChessTools\Tool\Exporter;
 
-use Cmuset\PgnParser\Model\Game;
+use Cmuset\ChessTools\Model\Game;
 
 interface GameExporterInterface
 {

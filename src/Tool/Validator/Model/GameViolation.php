@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Validator\Model;
+namespace Cmuset\ChessTools\Tool\Validator\Model;
 
-use Cmuset\PgnParser\Tool\Validator\Enum\MoveViolationEnum;
-use Cmuset\PgnParser\Tool\Validator\Enum\PositionViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\Enum\MoveViolationEnum;
+use Cmuset\ChessTools\Tool\Validator\Enum\PositionViolationEnum;
 
 class GameViolation
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Resolver;
+namespace Cmuset\ChessTools\Tool\Resolver;
 
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Model\Variation;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Model\Variation;
 
 class VariationResolver implements VariationResolverInterface
 {

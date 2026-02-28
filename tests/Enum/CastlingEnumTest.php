@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Enum;
+namespace Cmuset\ChessTools\Tests\Enum;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
 use PHPUnit\Framework\TestCase;
 
 class CastlingEnumTest extends TestCase

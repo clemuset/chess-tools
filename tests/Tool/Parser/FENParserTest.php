@@ -1,12 +1,12 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Parser;
+namespace Cmuset\ChessTools\Tests\Tool\Parser;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Tool\Parser\Exception\FENParsingException;
-use Cmuset\PgnParser\Tool\Parser\FENParser;
-use Cmuset\PgnParser\Tool\Parser\PGNParser;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Tool\Parser\Exception\FENParsingException;
+use Cmuset\ChessTools\Tool\Parser\FENParser;
+use Cmuset\ChessTools\Tool\Parser\PGNParser;
 use PHPUnit\Framework\TestCase;
 
 class FENParserTest extends TestCase

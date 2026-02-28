@@ -1,12 +1,12 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Parser;
+namespace Cmuset\ChessTools\Tests\Tool\Parser;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Tool\Parser\Exception\SANParsingException;
-use Cmuset\PgnParser\Tool\Parser\SANParser;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Tool\Parser\Exception\SANParsingException;
+use Cmuset\ChessTools\Tool\Parser\SANParser;
 use PHPUnit\Framework\TestCase;
 
 class SANParserTest extends TestCase

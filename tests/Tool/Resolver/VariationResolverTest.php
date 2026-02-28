@@ -1,13 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Resolver;
+namespace Cmuset\ChessTools\Tests\Tool\Resolver;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Model\Move;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Model\Variation;
-use Cmuset\PgnParser\Tool\Resolver\VariationResolver;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Model\Move;
+use Cmuset\ChessTools\Model\MoveNode;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Model\Variation;
+use Cmuset\ChessTools\Tool\Resolver\VariationResolver;
 use PHPUnit\Framework\TestCase;
 
 class VariationResolverTest extends TestCase

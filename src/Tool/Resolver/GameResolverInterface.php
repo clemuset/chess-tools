@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Resolver;
+namespace Cmuset\ChessTools\Tool\Resolver;
 
-use Cmuset\PgnParser\Model\Game;
+use Cmuset\ChessTools\Model\Game;
 
 interface GameResolverInterface
 {

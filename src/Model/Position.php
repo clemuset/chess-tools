@@ -1,20 +1,20 @@
 <?php
 
-namespace Cmuset\PgnParser\Model;
+namespace Cmuset\ChessTools\Model;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
-use Cmuset\PgnParser\Tool\Exporter\PositionExporter;
-use Cmuset\PgnParser\Tool\MoveApplier\MoveApplier;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\BishopMoveApplier;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\KingMoveApplier;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\KnightMoveApplier;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\PawnMoveApplier;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\QueenMoveApplier;
-use Cmuset\PgnParser\Tool\MoveApplier\PieceMoveApplier\RookMoveApplier;
-use Cmuset\PgnParser\Tool\Parser\FENParser;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
+use Cmuset\ChessTools\Tool\Exporter\PositionExporter;
+use Cmuset\ChessTools\Tool\MoveApplier\MoveApplier;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\BishopMoveApplier;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\KingMoveApplier;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\KnightMoveApplier;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\PawnMoveApplier;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\QueenMoveApplier;
+use Cmuset\ChessTools\Tool\MoveApplier\PieceMoveApplier\RookMoveApplier;
+use Cmuset\ChessTools\Tool\Parser\FENParser;
 
 class Position
 {

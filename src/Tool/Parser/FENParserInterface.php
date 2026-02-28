@@ -1,8 +1,8 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Parser;
+namespace Cmuset\ChessTools\Tool\Parser;
 
-use Cmuset\PgnParser\Model\Position;
+use Cmuset\ChessTools\Model\Position;
 
 interface FENParserInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Model;
+namespace Cmuset\ChessTools\Model;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CommentAnchorEnum;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CommentAnchorEnum;
 
 class MoveNode
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Validator;
+namespace Cmuset\ChessTools\Tool\Validator;
 
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\Validator\Enum\PositionViolationEnum;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\Validator\Enum\PositionViolationEnum;
 
 interface PositionValidatorInterface
 {

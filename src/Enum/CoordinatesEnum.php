@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmuset\PgnParser\Enum;
+namespace Cmuset\ChessTools\Enum;
 
 enum CoordinatesEnum: string
 {
@@ -84,7 +84,7 @@ enum CoordinatesEnum: string
         $file = ord($this->file()) - ord('a') + 1;
         $rank = $this->rank();
 
-        return (($file + $rank) % 2 === 0) ? ColorEnum::WHITE : ColorEnum::BLACK;
+        return (($file + $rank) % 2 === 0) ? ColorEnum::BLACK : ColorEnum::WHITE;
     }
 
     public static function allowedEnPassantTargets(): array

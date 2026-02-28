@@ -1,25 +1,26 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Parser;
+namespace Cmuset\ChessTools\Tool\Parser;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Enum\CommentAnchorEnum;
-use Cmuset\PgnParser\Enum\ResultEnum;
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\MoveNode;
-use Cmuset\PgnParser\Model\Variation;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Enum\CommentAnchorEnum;
+use Cmuset\ChessTools\Enum\ResultEnum;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\MoveNode;
+use Cmuset\ChessTools\Model\Variation;
+use Cmuset\ChessTools\Tool\Parser\Exception\PGNParsingException;
 
 class PGNParser implements PGNParserInterface
 {
     public const string INITIAL_FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
 
-    public const string T_COMMENT = 'comment';
-    public const string T_NAG = 'nag';
-    public const string T_MOVENUM = 'movenum';
-    public const string T_LPAR = 'lpar';
-    public const string T_RPAR = 'rpar';
-    public const string T_SAN = 'san';
-    public const string T_RESULT = 'result';
+    private const string T_COMMENT = 'comment';
+    private const string T_NAG = 'nag';
+    private const string T_MOVENUM = 'movenum';
+    private const string T_LPAR = 'lpar';
+    private const string T_RPAR = 'rpar';
+    private const string T_SAN = 'san';
+    private const string T_RESULT = 'result';
 
     public function __construct(
         private readonly FENParserInterface $fenParser,
@@ -32,24 +33,104 @@ class PGNParser implements PGNParserInterface
         return new self(new FENParser(), new SANParser());
     }
 
-    public function parse(string $pgn): Game
+    /**
+     * @return Game|Game[]
+     */
+    public function parse(string $pgn): Game|array
     {
-        $tags = $this->extractTags($pgn);
-        $fen = $tags['FEN'] ?? self::INITIAL_FEN;
-        $initialPosition = $this->fenParser->parse($fen);
+        $boundaries = $this->findGameBoundaries($pgn);
 
-        $game = new Game();
-        $game->setTags($this->extractTags($pgn));
-        $game->setInitialPosition($initialPosition);
-        $game->setResult($this->extractResult($pgn, $game->getTags()));
+        if (count($boundaries) > 1) {
+            $len = strlen($pgn);
+            $games = [];
 
-        $moveText = $this->extractMoveTextSection($pgn);
-        $moveText = trim($moveText);
-        $tokens = $this->tokenizeMoveText($moveText);
+            for ($i = 0, $count = count($boundaries); $i < $count; ++$i) {
+                $start = $boundaries[$i];
+                $end = $boundaries[$i + 1] ?? $len;
+                $raw = trim(substr($pgn, $start, $end - $start));
 
-        $game->setMainLine($this->buildVariation($tokens));
+                if ('' !== $raw) {
+                    $games[] = $this->parseGame($raw);
+                }
+            }
 
-        return $game;
+            return $games;
+        }
+
+        return $this->parseGame($pgn);
+    }
+
+    private function parseGame(string $pgn): Game
+    {
+        try {
+            $tags = $this->extractTags($pgn);
+            $fen = $tags['FEN'] ?? self::INITIAL_FEN;
+            $initialPosition = $this->fenParser->parse($fen);
+
+            $game = new Game();
+            $game->setTags($this->extractTags($pgn));
+            $game->setInitialPosition($initialPosition);
+            $game->setResult($this->extractResult($pgn, $game->getTags()));
+
+            $moveText = $this->extractMoveTextSection($pgn);
+            $moveText = trim($moveText);
+            $tokens = $this->tokenizeMoveText($moveText);
+
+            $game->setMainLine($this->buildVariation($tokens));
+
+            return $game;
+        } catch (\Throwable $e) {
+            throw new PGNParsingException(message: $e->getMessage(), previous: $e);
+        }
+    }
+
+    /**
+     * @return int[] byte offsets where each game starts
+     */
+    private function findGameBoundaries(string $pgn): array
+    {
+        $boundaries = [0];
+        $len = strlen($pgn);
+        $i = 0;
+        $inMoveText = false;
+
+        while ($i < $len) {
+            $c = $pgn[$i];
+
+            if (ctype_space($c)) {
+                ++$i;
+                continue;
+            }
+
+            if ('[' === $c) {
+                if ($inMoveText) {
+                    $boundaries[] = $i;
+                    $inMoveText = false;
+                }
+                $closing = strpos($pgn, ']', $i + 1);
+                $i = false === $closing ? $len : $closing + 1;
+                continue;
+            }
+
+            if ('{' === $c) {
+                $closing = strpos($pgn, '}', $i + 1);
+                $i = false === $closing ? $len : $closing + 1;
+                $inMoveText = true;
+                continue;
+            }
+
+            if (';' === $c) {
+                $nl = strpos($pgn, "\n", $i + 1);
+                $i = false === $nl ? $len : $nl;
+                $inMoveText = true;
+                continue;
+            }
+
+            $inMoveText = true;
+            ++$i;
+        }
+
+        return $boundaries;
     }
 
     private function extractTags(string $pgn): array
@@ -147,9 +228,7 @@ class PGNParser implements PGNParserInterface
                     break;
 
                 case self::T_NAG:
-                    if ($currentNode) {
-                        $currentNode->addNag((int) ltrim($token['value'], '$'));
-                    }
+                    $currentNode?->addNag((int) ltrim($token['value'], '$'));
                     break;
 
                 case self::T_COMMENT:

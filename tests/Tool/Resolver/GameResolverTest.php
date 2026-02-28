@@ -1,11 +1,11 @@
 <?php
 
-namespace Cmuset\PgnParser\Tests\Tool\Resolver;
+namespace Cmuset\ChessTools\Tests\Tool\Resolver;
 
-use Cmuset\PgnParser\Enum\ResultEnum;
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Tool\Resolver\GameResolver;
+use Cmuset\ChessTools\Enum\ResultEnum;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Tool\Resolver\GameResolver;
 use PHPUnit\Framework\TestCase;
 
 class GameResolverTest extends TestCase

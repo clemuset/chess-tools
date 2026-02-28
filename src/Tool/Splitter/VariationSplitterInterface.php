@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Splitter;
+namespace Cmuset\ChessTools\Tool\Splitter;
 
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\Variation;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\Variation;
 
 interface VariationSplitterInterface
 {

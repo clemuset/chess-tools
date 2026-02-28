@@ -1,10 +1,10 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Exporter;
+namespace Cmuset\ChessTools\Tool\Exporter;
 
-use Cmuset\PgnParser\Enum\CastlingEnum;
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Model\Position;
+use Cmuset\ChessTools\Enum\CastlingEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Model\Position;
 
 class PositionExporter implements PositionExporterInterface
 {

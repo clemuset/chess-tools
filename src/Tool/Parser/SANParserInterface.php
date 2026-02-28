@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Parser;
+namespace Cmuset\ChessTools\Tool\Parser;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Model\Move;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Model\Move;
 
 interface SANParserInterface
 {

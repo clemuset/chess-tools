@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Model;
+namespace Cmuset\ChessTools\Model;
 
-use Cmuset\PgnParser\Enum\CoordinatesEnum;
-use Cmuset\PgnParser\Enum\PieceEnum;
+use Cmuset\ChessTools\Enum\CoordinatesEnum;
+use Cmuset\ChessTools\Enum\PieceEnum;
 
 class Square
 {

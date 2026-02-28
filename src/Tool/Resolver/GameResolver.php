@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Resolver;
+namespace Cmuset\ChessTools\Tool\Resolver;
 
-use Cmuset\PgnParser\Enum\ResultEnum;
-use Cmuset\PgnParser\Model\Game;
+use Cmuset\ChessTools\Enum\ResultEnum;
+use Cmuset\ChessTools\Model\Game;
 
 class GameResolver implements GameResolverInterface
 {

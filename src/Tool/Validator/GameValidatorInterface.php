@@ -1,9 +1,9 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Validator;
+namespace Cmuset\ChessTools\Tool\Validator;
 
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Tool\Validator\Model\GameViolation;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Tool\Validator\Model\GameViolation;
 
 interface GameValidatorInterface
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Cmuset\PgnParser\Model;
+namespace Cmuset\ChessTools\Model;
 
-use Cmuset\PgnParser\Enum\ColorEnum;
-use Cmuset\PgnParser\Tool\Exporter\GameExporter;
-use Cmuset\PgnParser\Tool\Merger\VariationMerger;
-use Cmuset\PgnParser\Tool\Parser\PGNParser;
-use Cmuset\PgnParser\Tool\Splitter\VariationSplitter;
+use Cmuset\ChessTools\Enum\ColorEnum;
+use Cmuset\ChessTools\Tool\Exporter\GameExporter;
+use Cmuset\ChessTools\Tool\Merger\VariationMerger;
+use Cmuset\ChessTools\Tool\Parser\PGNParser;
+use Cmuset\ChessTools\Tool\Splitter\VariationSplitter;
 
 /**
  * @implements \IteratorAggregate<string, MoveNode>
@@ -29,7 +29,9 @@ class Variation implements \IteratorAggregate, \ArrayAccess, \Countable
 
     public static function fromPGN(string $pgn): Variation
     {
-        return PGNParser::create()->parse($pgn)->getMainLine();
+        $game = PGNParser::create()->parse($pgn);
+
+        return is_array($game) ? $game[0]->getMainLine() : $game->getMainLine();
     }
 
     public function getPGN(): string
@@ -112,6 +114,11 @@ class Variation implements \IteratorAggregate, \ArrayAccess, \Countable
     public function getNode(string $key): ?MoveNode
     {
         return $this->nodes[$key] ?? null;
+    }
+
+    public function getMove(string $key): ?Move
+    {
+        return $this->getNode($key)?->getMove();
     }
 
     private function reorderNodes(): void

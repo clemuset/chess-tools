@@ -1,13 +1,13 @@
 <?php
 
-namespace Cmuset\PgnParser\Tool\Validator;
+namespace Cmuset\ChessTools\Tool\Validator;
 
-use Cmuset\PgnParser\Model\Game;
-use Cmuset\PgnParser\Model\Position;
-use Cmuset\PgnParser\Model\Variation;
-use Cmuset\PgnParser\Tool\MoveApplier\Exception\MoveApplyingException;
-use Cmuset\PgnParser\Tool\MoveApplier\MoveApplier;
-use Cmuset\PgnParser\Tool\Validator\Model\GameViolation;
+use Cmuset\ChessTools\Model\Game;
+use Cmuset\ChessTools\Model\Position;
+use Cmuset\ChessTools\Model\Variation;
+use Cmuset\ChessTools\Tool\MoveApplier\Exception\MoveApplyingException;
+use Cmuset\ChessTools\Tool\MoveApplier\MoveApplier;
+use Cmuset\ChessTools\Tool\Validator\Model\GameViolation;
 
 class GameValidator implements GameValidatorInterface
 {

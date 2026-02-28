@@ -22,14 +22,14 @@ class CoordinatesEnumTest extends TestCase
 
     public function testColorLightSquares(): void
     {
-        self::assertSame(ColorEnum::WHITE, CoordinatesEnum::A1->color());
-        self::assertSame(ColorEnum::WHITE, CoordinatesEnum::H8->color());
+        self::assertSame(ColorEnum::BLACK, CoordinatesEnum::A1->color());
+        self::assertSame(ColorEnum::BLACK, CoordinatesEnum::H8->color());
     }
 
     public function testColorDarkSquares(): void
     {
-        self::assertSame(ColorEnum::BLACK, CoordinatesEnum::A2->color());
-        self::assertSame(ColorEnum::BLACK, CoordinatesEnum::B1->color());
+        self::assertSame(ColorEnum::WHITE, CoordinatesEnum::A2->color());
+        self::assertSame(ColorEnum::WHITE, CoordinatesEnum::B1->color());
     }
 
     public function testUpMovement(): void

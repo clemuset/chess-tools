@@ -147,4 +147,22 @@ class Move
     {
         $this->annotation = $annotation;
     }
+
+    public function toArray(): array
+    {
+        return [
+            'san' => $this->getSAN(),
+            'piece' => $this->piece?->value,
+            'squareFrom' => $this->squareFrom?->value,
+            'fileFrom' => $this->fileFrom,
+            'rankFrom' => $this->rowFrom,
+            'to' => $this->to?->value,
+            'promotion' => $this->promotion?->value,
+            'isCapture' => $this->isCapture,
+            'isCheck' => $this->isCheck,
+            'isCheckmate' => $this->isCheckmate,
+            'castling' => $this->castling?->value,
+            'annotation' => $this->annotation,
+        ];
+    }
 }

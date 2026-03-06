@@ -226,6 +226,14 @@ class Variation implements \IteratorAggregate, \ArrayAccess, \Countable
         return $clonedVariation;
     }
 
+    public function toArray(): array
+    {
+        return [
+            'identifier' => $this->identifier,
+            'nodes' => array_map(fn (MoveNode $n) => $n->toArray(), $this->nodes),
+        ];
+    }
+
     public function __clone(): void
     {
         $clonedNodes = [];

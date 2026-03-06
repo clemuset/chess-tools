@@ -161,6 +161,16 @@ class Game
         $this->mainLine->clearAllComments();
     }
 
+    public function toArray(): array
+    {
+        return [
+            'tags' => $this->tags,
+            'result' => $this->result?->value,
+            'initialPosition' => $this->initialPosition?->toArray(),
+            'mainLine' => $this->mainLine->toArray(),
+        ];
+    }
+
     public function __clone(): void
     {
         $this->mainLine = clone $this->mainLine;

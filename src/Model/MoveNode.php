@@ -151,6 +151,18 @@ class MoveNode
         $this->clearVariations();
     }
 
+    public function toArray(): array
+    {
+        return [
+            'move' => $this->move?->toArray(),
+            'moveNumber' => $this->moveNumber,
+            'beforeMoveComment' => $this->beforeMoveComment,
+            'afterMoveComment' => $this->afterMoveComment,
+            'nags' => $this->nags,
+            'variations' => array_map(fn (Variation $v) => $v->toArray(), $this->variations),
+        ];
+    }
+
     public function __clone(): void
     {
         $clonedVariations = [];

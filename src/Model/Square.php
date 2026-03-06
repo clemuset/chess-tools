@@ -32,4 +32,12 @@ class Square
     {
         return null === $this->piece;
     }
+
+    public function toArray(): array
+    {
+        return [
+            'coordinates' => $this->coordinates->value,
+            'piece' => $this->piece?->value,
+        ];
+    }
 }

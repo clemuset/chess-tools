@@ -366,6 +366,19 @@ class Position
         return $output;
     }
 
+    public function toArray(): array
+    {
+        return [
+            'fen' => $this->getFEN(),
+            'sideToMove' => $this->sideToMove->value,
+            'castlingRights' => array_map(fn (CastlingEnum $c) => $c->value, $this->castlingRights),
+            'enPassantTarget' => $this->enPassantTarget?->value,
+            'halfmoveClock' => $this->halfmoveClock,
+            'fullmoveNumber' => $this->fullmoveNumber,
+            'pieces' => array_map(fn (Square $s) => $s->toArray(), array_filter($this->squares, fn (Square $s) => !$s->isEmpty())),
+        ];
+    }
+
     public function __clone(): void
     {
         $this->squares = array_map(fn (Square $square) => clone $square, $this->squares);
